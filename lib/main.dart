@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_29112021/demo_basic_provider.dart';
 import 'package:flutter_provider_29112021/demo_changenotifier_provider.dart';
+import 'package:flutter_provider_29112021/demo_listenable_provider.dart';
 import 'package:flutter_provider_29112021/demo_multiple_provider.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DemoMultipleProvider(),
+      home: DemoValueListenable(),
     );
   }
 }
