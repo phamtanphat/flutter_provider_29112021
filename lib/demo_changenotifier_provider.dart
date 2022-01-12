@@ -8,6 +8,7 @@ class Counter extends ChangeNotifier {
 
   void inCreaseCount() {
     value += 1;
+    notifyListeners();
   }
 }
 
@@ -19,6 +20,7 @@ class DemoChangeNotifier extends StatefulWidget {
 class _DemoChangeNotifierState extends State<DemoChangeNotifier> {
   @override
   Widget build(BuildContext context) {
+    print("Build Parent");
     return Scaffold(
       appBar: AppBar(
         title: Text("Demo Basic Provider"),
@@ -41,17 +43,20 @@ class _DemoChangeNotifierState extends State<DemoChangeNotifier> {
 class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<Counter>(
-        builder: (context , counter , child){
-          return Text(counter.value.toString());
-        }
-    );
+    return Consumer<Counter>(builder: (context, counter, child) {
+      return Text(counter.value.toString());
+    });
   }
 }
 
 class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () {}, child: Text("Increase"));
+    Counter counter = Provider.of(context);
+    return ElevatedButton(
+        onPressed: () {
+          counter.inCreaseCount();
+        },
+        child: Text("Increase"));
   }
 }
