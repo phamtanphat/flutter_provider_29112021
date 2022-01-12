@@ -18,12 +18,13 @@ class DemoChangeNotifier extends StatefulWidget {
 }
 
 class _DemoChangeNotifierState extends State<DemoChangeNotifier> {
+
   @override
   Widget build(BuildContext context) {
     print("Build Parent");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Demo Basic Provider"),
+        title: Text("Demo Change Notifier Provider"),
       ),
       body: Container(
         constraints: BoxConstraints.expand(),
@@ -50,6 +51,7 @@ class TextWidget extends StatelessWidget {
 }
 
 class ButtonWidget extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     Counter counter = Provider.of(context);
