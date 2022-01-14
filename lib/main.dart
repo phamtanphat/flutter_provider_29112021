@@ -3,6 +3,7 @@ import 'package:flutter_provider_29112021/demo_basic_provider.dart';
 import 'package:flutter_provider_29112021/demo_changenotifier_provider.dart';
 import 'package:flutter_provider_29112021/demo_listenable_provider.dart';
 import 'package:flutter_provider_29112021/demo_multiple_provider.dart';
+import 'package:flutter_provider_29112021/demo_proxy_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DemoValueListenable(),
+      home: DemoProxyProvider(),
     );
   }
 }
