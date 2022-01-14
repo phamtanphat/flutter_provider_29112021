@@ -1,38 +1,21 @@
-class Api{
-  late String baseurl;
+class Counter{
+  late int value;
 
-  Api({required this.baseurl});
+  Counter({required this.value});
+
 }
 
 class Request{
-  late Api api;
+  late Counter counter;
 
-  Request({required this.api});
-
-  String getData(){
-    return "hello";
-  }
+  Request({required this.counter});
 
 }
 
 class Repository{
-
   late Request request;
 
   Repository({required this.request});
 
-  void handleData(){
-    request.getData();
-  }
-
 }
 
-
-void main(){
-
-  Api api = Api(baseurl: "http://abc.com");
-  Request request = Request(api: api);
-
-  Repository repository = Repository(request: request);
-
-}
